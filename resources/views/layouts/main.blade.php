@@ -8,16 +8,16 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>UNESA</title>
+    <title>I K A M M A</title>
 
     <!-- Bootstrap core CSS -->
-    {{HTML::style("assets/css/bootstrap.css")}}
+    <link href="/assets/css/bootstrap.css" type="text/css" rel="stylesheet"/>
 
     <!-- Custom styles for this template -->
-    {{HTML::style("assets/css/main.css")}}
+    <link href="/assets/css/main.css" type="text/css" rel="stylesheet"/>
 
     <!-- custom css -->
-    {{HTML::style("assets/css/custom.css")}}
+    <link href="/assets/css/custom.css" type="text/css" rel="stylesheet"/>
 
 
     @yield('css')
@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{URL::to('/')}}">UNESA</a>
+          <a class="navbar-brand" href="{!!URL::to('/')!!}">I K A M M A</a>
         </div>
         <div class="navbar-collapse collapse">
             @include('layouts.menu')
@@ -55,8 +55,8 @@
 	<div id="footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 centered">
-				    <p>&copy;Copyright <a href="#">UNESA</a> 2015</p>
+				<div class="col-md-12 col-xs-12 centered">
+				    <p>&copy;Copyright <a href="#"> Achmad Fatoni</a> 2015</p>
 				</div>
 			</div>
 
@@ -67,8 +67,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    {{HTML::script("assets/js/jquery.min.js")}}
-    {{HTML::script("assets/js/bootstrap.min.js")}}
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
     @yield('js')
   </body>
 </html>
