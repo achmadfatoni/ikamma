@@ -42,7 +42,7 @@ class ContactsController extends Controller
     {
         $this->validate($request, [
             'name'  => 'required',
-            'no_hp' => 'required|unique:contacts',
+//            'no_hp' => 'unique:contacts',
         ]);
 
         Contact::create($request->all());
@@ -88,7 +88,7 @@ class ContactsController extends Controller
         $contact = Contact::find($id);
         $this->validate($request, [
             'name'  => 'required',
-            'no_hp' => 'required|unique:contacts,id,'.$id,
+//            'no_hp' => 'unique:contacts,id,'.$id,
         ]);
 
         $contact->update($request->all());

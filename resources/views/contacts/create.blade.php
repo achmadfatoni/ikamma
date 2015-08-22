@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label for="no_hp">No Hp</label>
                     <input type="text" class="form-control" name="no_hp" placeholder="Isi no hp"
-                           value="{!! old('no_hp') !!}" required>
+                           value="{!! old('no_hp') !!}">
                 </div>
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </form>
