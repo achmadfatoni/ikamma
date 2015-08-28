@@ -107,4 +107,19 @@ class ContactsController extends Controller
         Contact::destroy($id);
         return redirect('contacts')->with('success','Contact Deleted');
     }
+
+    public function generate()
+    {
+        $data = '';
+        $contacts = Contact::all();
+        $no = 1;
+        foreach($contacts as $contacts)
+        {
+            if($contacts->no_hp != null){
+                $data = $data .', '.$contacts->no_hp ;
+            }
+        }
+
+        return $data;
+    }
 }

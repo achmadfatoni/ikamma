@@ -12,5 +12,6 @@
 */
 
 Route::get('/', 'ContactsController@index');
+Route::get('/generate', 'ContactsController@generate');
 
 Route::resource('contacts','ContactsController');
