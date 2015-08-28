@@ -116,7 +116,7 @@ class ContactsController extends Controller
         foreach($contacts as $contacts)
         {
             if($contacts->no_hp != null){
-                if ($data == 1){
+                if ($no == 1){
                     $data = $contacts->no_hp;
                 }else{
                     $data = $data .', '.$contacts->no_hp;
