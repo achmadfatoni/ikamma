@@ -13,7 +13,7 @@ class AddIsSurabayaToContactsTable extends Migration
     public function up()
     {
         Schema::table('contacts', function (Blueprint $table) {
-            $table->integer('is_surabaya')->default(0);
+            $table->integer('is_surabaya')->default(1);
         });
     }
 

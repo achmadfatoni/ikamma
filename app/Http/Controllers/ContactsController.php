@@ -108,10 +108,15 @@ class ContactsController extends Controller
         return redirect('contacts')->with('success','Contact Deleted');
     }
 
-    public function generate()
+    public function generate(Request $request)
     {
         $data = '';
         $contacts = Contact::all();
+        
+        if($request->input('kota')){
+            $contacts = Contact::whereIsSurabaya($request->input('kota'))->get();
+        }
+
         $no = 1;
         foreach($contacts as $contacts)
         {

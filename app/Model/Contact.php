@@ -12,6 +12,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends  Model
 {
-    protected $fillable = ['name','no_hp'];
+    protected $fillable = ['name','no_hp', 'is_surabaya'];
 
 }

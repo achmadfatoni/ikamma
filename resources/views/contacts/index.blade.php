@@ -12,12 +12,15 @@
         </div>
     </div>
 
+    @if(Auth::check())
     <div class="row">
         <div class="col-md-12 col-xs-12 col-xs-12">
             <a href="{!! URL::to('contacts/create') !!}" class="btn btn-primary">Tambah Contacts</a>
             @include('layouts.notifikasi')
         </div>
     </div>
+    @endif
+
     <div class="row mt">
         <div class="col-md-12 col-xs-12">
             <div class="table-responsive">
@@ -27,7 +30,9 @@
                         <th class="text-center" width="10%">No</th>
                         <th class="text-center">Nama</th>
                         <th class="text-center">No HP</th>
+                        @if(Auth::check())
                         <th class="text-center" width="10%">Actions</th>
+                        @endif
                     </tr>
                     </thead>
                     <tbody>
@@ -37,6 +42,7 @@
                             <td class="text-center">{!! $no !!}</td>
                             <td>{!! $row->name !!}</td>
                             <td class="text-center">{!! $row->no_hp !!}</td>
+                            @if(Auth::check())
                             <td class="text-center">
                                 <form action="{!! URL::to('contacts/'.$row->id) !!}" method="POST">
                                     <input type="hidden" name="_method" value="DELETE"/>
@@ -45,6 +51,7 @@
                                     <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove white"></i></button>
                                 </form>
                             </td>
+                            @endif
                         </tr>
                         <?php $no++; ?>
                     @endforeach
