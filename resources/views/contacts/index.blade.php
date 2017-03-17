@@ -41,7 +41,7 @@
                         <tr>
                             <td class="text-center">{!! $no !!}</td>
                             <td>{!! $row->name !!}</td>
-                            <td class="text-center">{!! $row->no_hp !!}</td>
+                            <td class="text-center">{!! $row->phone !!}</td>
                             @if(Auth::check())
                             <td class="text-center">
                                 <form action="{!! URL::to('contacts/'.$row->id) !!}" method="POST">

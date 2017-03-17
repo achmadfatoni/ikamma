@@ -112,19 +112,15 @@ class ContactsController extends Controller
     {
         $data = '';
         $contacts = Contact::all();
-        
-        if($request->input('kota')){
-            $contacts = Contact::whereIsSurabaya($request->input('kota'))->get();
-        }
-
+    
         $no = 1;
         foreach($contacts as $contacts)
         {
-            if($contacts->no_hp != null){
+            if($contacts->phone != null){
                 if ($no == 1){
-                    $data = $contacts->no_hp;
+                    $data = $contacts->phone;
                 }else{
-                    $data = $data .', '.$contacts->no_hp;
+                    $data = $data .', '.$contacts->phone;
                 }
             }
             $no++;
