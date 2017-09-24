@@ -116,20 +116,34 @@ class ContactsController extends Controller
         if ($request->exists('is_surabaya')) {
             $contacts = Contact::where('is_surabaya', 1)->get();
         }
-    
-        $no = 1;
-        foreach($contacts as $contacts)
-        {
-            if($contacts->no_hp != null){
-                if ($no == 1){
-                    $data = $contacts->no_hp;
-                }else{
-                    $data = $data .', '.$contacts->no_hp;
-                }
-            }
-            $no++;
-        }
 
-        return $data;
+        $contacts = $contacts->filter(function ($contact) {
+            return $contact->no_hp != null;
+        });
+
+        echo 'Jumlah total nomor ' . count($contacts);
+        echo '<br>';
+    
+        foreach($contacts->chunk(10) as $items)
+        {
+            echo 'Jumlah nomor ' . count($items);
+            echo '<br>';
+            $no = 1;
+            $data = '';
+            foreach ($items as $contact) {
+                if($contact->no_hp != null){
+                    if ($no == 1){
+                        $data = $contact->no_hp;
+                    }else{
+                        $data = $data .', '.$contact->no_hp;
+                    }
+                }
+                $no++;
+            }
+
+            echo 'No hp <br>';
+            echo $data;
+            echo '<br>';
+        }
     }
 }
