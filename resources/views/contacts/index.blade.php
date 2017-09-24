@@ -27,6 +27,7 @@
                     <tr>
                         <th class="text-center" width="10%">No</th>
                         <th class="text-center">Nama</th>
+                        <th class="text-center">Status</th>
                         <th class="text-center">No HP</th>
                         <th class="text-center" width="10%">Actions</th>
                     </tr>
@@ -37,6 +38,7 @@
                         <tr>
                             <td class="text-center">{!! $no !!}</td>
                             <td>{!! $row->name !!}</td>
+                            <td>{!! $row->is_active ? 'Aktif' : 'Tidak aktif' !!}</td>
                             <td class="text-center">{!! $row->no_hp !!}</td>
                             <td class="text-center">
                                 <form action="{!! URL::to('contacts/'.$row->id) !!}" method="POST">

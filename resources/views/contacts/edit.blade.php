@@ -31,6 +31,15 @@
                     <input type="text" class="form-control" name="no_hp" placeholder="Isi no hp"
                            value="{!! $contact->no_hp !!}">
                 </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <div class="radio">
+                        <label><input type="radio" name="is_active" value="0" {{ $contact->is_active ? null : 'checked' }}>Tidak Aktif</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="is_active" value="1" {{ $contact->is_active ? 'checked' : null }}>Aktif</label>
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </form>
         </div>

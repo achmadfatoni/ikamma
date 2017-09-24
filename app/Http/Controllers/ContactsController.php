@@ -45,7 +45,7 @@ class ContactsController extends Controller
 //            'no_hp' => 'unique:contacts',
         ]);
 
-        Contact::create($request->all());
+        Contact::create($request->all() + ['is_active' => true]);
 
         return redirect('contacts')->with('success','Contact created');
     }
