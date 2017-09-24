@@ -56,7 +56,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-xs-12 centered">
-				    <p>&copy;Copyright <a href="#"> Achmad Fatoni</a> 2015</p>
+				    <p>&copy;Copyright <a href="#"> Achmad Fatoni</a> {{ date('Y') }}</p>
 				</div>
 			</div>
 
